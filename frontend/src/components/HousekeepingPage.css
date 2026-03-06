@@ -1,0 +1,450 @@
+/* ============================================================
+   Housekeeping Page - Hotel Management System
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+.hk-page {
+  min-height: 100vh;
+  background: #f0f4f8;
+  padding: 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2d3748;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.hk-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+  color: white;
+  padding: 24px 32px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(26, 54, 93, 0.3);
+}
+
+.hk-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hk-icon {
+  font-size: 48px;
+}
+
+.hk-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.hk-header p {
+  margin: 4px 0 0;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+/* ── Alerts ───────────────────────────────────────────────── */
+.hk-alert {
+  padding: 14px 20px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hk-alert-error {
+  background: #fff5f5;
+  border: 1px solid #feb2b2;
+  color: #c53030;
+}
+
+.hk-alert-success {
+  background: #f0fff4;
+  border: 1px solid #9ae6b4;
+  color: #276749;
+}
+
+/* ── Cards ────────────────────────────────────────────────── */
+.hk-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.hk-form-card {
+  border: 2px solid #bee3f8;
+}
+
+.hk-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #ebf8ff;
+}
+
+.hk-card-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #2b6cb0;
+}
+
+.hk-btn-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #718096;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.hk-btn-close:hover {
+  background: #e2e8f0;
+}
+
+/* ── Form ─────────────────────────────────────────────────── */
+.hk-form {
+  padding: 24px;
+}
+
+.hk-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.hk-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hk-form-group-full {
+  grid-column: 1 / -1;
+}
+
+.hk-form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hk-form-group input,
+.hk-form-group select,
+.hk-form-group textarea {
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #2d3748;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  font-family: inherit;
+}
+
+.hk-form-group input:focus,
+.hk-form-group select:focus,
+.hk-form-group textarea:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+}
+
+.hk-form-group textarea {
+  resize: vertical;
+}
+
+.hk-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* ── Stats ────────────────────────────────────────────────── */
+.hk-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.hk-stat-card {
+  flex: 1;
+  min-width: 120px;
+  background: white;
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-top: 4px solid transparent;
+}
+
+.hk-stat-count {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hk-stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  color: #718096;
+}
+
+.hk-stat-pending   { border-top-color: #ed8936; }
+.hk-stat-pending .hk-stat-count   { color: #c05621; }
+
+.hk-stat-in_progress { border-top-color: #3182ce; }
+.hk-stat-in_progress .hk-stat-count { color: #2b6cb0; }
+
+.hk-stat-completed { border-top-color: #38a169; }
+.hk-stat-completed .hk-stat-count { color: #276749; }
+
+.hk-stat-cancelled { border-top-color: #e53e3e; }
+.hk-stat-cancelled .hk-stat-count { color: #c53030; }
+
+.hk-stat-total     { border-top-color: #805ad5; }
+.hk-stat-total .hk-stat-count     { color: #553c9a; }
+
+/* ── Filters ──────────────────────────────────────────────── */
+.hk-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hk-filter-input,
+.hk-filter-select {
+  padding: 10px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  background: white;
+}
+
+.hk-filter-input { min-width: 220px; }
+
+.hk-filter-input:focus,
+.hk-filter-select:focus {
+  border-color: #3182ce;
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+.hk-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hk-btn-primary {
+  background: linear-gradient(135deg, #2b6cb0, #3182ce);
+  color: white;
+  box-shadow: 0 2px 6px rgba(49, 130, 206, 0.4);
+}
+
+.hk-btn-primary:hover {
+  background: linear-gradient(135deg, #2c5282, #2b6cb0);
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.5);
+  transform: translateY(-1px);
+}
+
+.hk-btn-secondary {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.hk-btn-secondary:hover {
+  background: #e2e8f0;
+}
+
+.hk-btn-edit {
+  background: #ebf8ff;
+  color: #2b6cb0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #bee3f8;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+
+.hk-btn-edit:hover {
+  background: #bee3f8;
+}
+
+.hk-btn-delete {
+  background: #fff5f5;
+  color: #c53030;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #fed7d7;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 16px;
+}
+
+.hk-btn-delete:hover {
+  background: #fed7d7;
+}
+
+/* ── Table ────────────────────────────────────────────────── */
+.hk-table-wrapper {
+  overflow-x: auto;
+}
+
+.hk-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.hk-table thead tr {
+  background: #f7fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.hk-table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #718096;
+  white-space: nowrap;
+}
+
+.hk-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f4f8;
+  vertical-align: middle;
+}
+
+.hk-table tbody tr:hover {
+  background: #f7fafc;
+}
+
+.hk-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.hk-td-id {
+  color: #a0aec0;
+  font-size: 12px;
+  font-weight: 600;
+  width: 40px;
+}
+
+.hk-td-notes {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #718096;
+}
+
+.hk-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ── Badges ───────────────────────────────────────────────── */
+.hk-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hk-badge-pending      { background: #feebc8; color: #c05621; }
+.hk-badge-in_progress  { background: #bee3f8; color: #2b6cb0; }
+.hk-badge-completed    { background: #c6f6d5; color: #276749; }
+.hk-badge-cancelled    { background: #fed7d7; color: #c53030; }
+
+/* ── Empty / Loading ──────────────────────────────────────── */
+.hk-loading {
+  text-align: center;
+  padding: 60px 24px;
+  color: #718096;
+  font-size: 16px;
+}
+
+.hk-empty {
+  text-align: center;
+  padding: 60px 24px;
+  color: #a0aec0;
+}
+
+.hk-empty span {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.hk-empty p {
+  font-size: 16px;
+  margin: 0;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hk-page {
+    padding: 16px;
+  }
+
+  .hk-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .hk-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hk-form-group-full {
+    grid-column: 1;
+  }
+
+  .hk-stats {
+    gap: 10px;
+  }
+
+  .hk-stat-card {
+    min-width: 80px;
+    padding: 12px 14px;
+  }
+}

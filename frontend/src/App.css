@@ -1,0 +1,99 @@
+/* ─── Layout ─────────────────────────────────────────── */
+.hms-app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: #f0f2f5;
+}
+
+/* ─── Sidebar ─────────────────────────────────────────── */
+.hms-sidebar {
+  display: flex;
+  flex-direction: column;
+  background: #1a2332;
+  color: #fff;
+  transition: width 0.25s ease;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 100;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+}
+
+.hms-app.sidebar-open  .hms-sidebar { width: 220px; }
+.hms-app.sidebar-closed .hms-sidebar { width: 60px; }
+
+.hms-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  white-space: nowrap;
+  min-height: 64px;
+}
+
+.brand-icon { font-size: 1.6rem; flex-shrink: 0; }
+.brand-text  { font-size: 1.3rem; font-weight: 700; letter-spacing: 1px; }
+
+/* ─── Nav ─────────────────────────────────────────────── */
+.hms-nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+  gap: 2px;
+}
+
+.hms-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  color: #b0bec5;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.88rem;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  border-radius: 0 6px 6px 0;
+}
+
+.hms-nav-item:hover {
+  background: rgba(255,255,255,0.07);
+  color: #fff;
+}
+
+.hms-nav-item.active {
+  background: rgba(74,144,226,0.18);
+  border-left-color: #4a90e2;
+  color: #fff;
+  font-weight: 600;
+}
+
+.nav-icon  { font-size: 1.15rem; flex-shrink: 0; }
+.nav-label { overflow: hidden; }
+
+/* ─── Sidebar toggle ──────────────────────────────────── */
+.hms-sidebar-toggle {
+  margin: 8px;
+  padding: 8px;
+  background: rgba(255,255,255,0.07);
+  border: none;
+  border-radius: 6px;
+  color: #90a4ae;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.15s;
+}
+.hms-sidebar-toggle:hover { background: rgba(255,255,255,0.14); color: #fff; }
+
+/* ─── Main content ────────────────────────────────────── */
+.hms-main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+}

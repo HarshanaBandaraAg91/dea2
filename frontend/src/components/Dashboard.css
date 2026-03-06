@@ -1,0 +1,159 @@
+/* Dashboard */
+.db-page {
+  min-height: 100vh;
+  padding: 32px;
+  background: #f0f2f5;
+}
+
+/* Hero */
+.db-hero {
+  background: linear-gradient(135deg, #1a2332 0%, #2d4a6e 100%);
+  border-radius: 16px;
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 24px rgba(26,35,50,0.18);
+}
+
+.db-hero-text h1 {
+  margin: 0 0 8px;
+  font-size: 1.9rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.db-hero-text p {
+  margin: 0;
+  color: #90a4ae;
+  font-size: 1rem;
+}
+
+.db-hero-stats {
+  display: flex;
+  gap: 28px;
+}
+
+.db-hero-stat {
+  text-align: center;
+}
+
+.db-hero-stat span {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4a90e2;
+}
+
+.db-hero-stat label {
+  font-size: 0.75rem;
+  color: #90a4ae;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Section title */
+.db-section-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #78909c;
+  margin-bottom: 16px;
+}
+
+/* Grid */
+.db-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+/* Card */
+.db-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.db-card:hover {
+  box-shadow: 0 6px 20px rgba(74,144,226,0.15);
+  border-color: #4a90e2;
+  transform: translateY(-2px);
+}
+
+.db-card-ready {
+  border-color: #e8f5e9;
+  background: #fafffe;
+}
+
+.db-card-ready:hover {
+  border-color: #43a047;
+  box-shadow: 0 6px 20px rgba(67,160,71,0.15);
+}
+
+.db-card-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.db-card-body { flex: 1; }
+
+.db-card-label {
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: #1a2332;
+  margin-bottom: 4px;
+}
+
+.db-card-desc {
+  font-size: 0.8rem;
+  color: #78909c;
+  line-height: 1.45;
+}
+
+.db-card-port {
+  margin-top: 8px;
+  font-size: 0.72rem;
+  color: #b0bec5;
+  font-family: monospace;
+  background: #f5f7fa;
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.db-badge-live {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #43a047;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* Footer */
+.db-footer {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #b0bec5;
+  padding-bottom: 16px;
+}
